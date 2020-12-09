@@ -7,80 +7,52 @@ import java.util.Scanner;
 
 public class Playlist {
 
-    public static void menuPlaylist(){
-        System.out.println();
-        System.out.println("-------------------Playlist--------------------");
-        System.out.println("Veuillez entrer :");
-        System.out.println("-'suivant' pour passer à la musique suivante");
-        System.out.println("-'précédent' pour passer à la musique précendente");
-        System.out.println("-'ajouter' pour ajouter une musique");
-        System.out.println("-'supprimer' pour supprimer une musique");
-        System.out.println("-'modifier' pour modifier");
-        System.out.println("-'vider' pour vider la playlist");
-        System.out.println("-'menu' pour revenir au menu principal");
-        System.out.println("-'quitter' pour quitter");
-
-        Scanner scanChoixPlaylist = new Scanner(System.in);
-        String entreeUtilisateur = scanChoixPlaylist.nextLine();
-
-        switch (entreeUtilisateur){
-            case "suivant" :
-                System.out.println("passer musique suiv");
-                break;
-
-            case "précedent" :
-                System.out.println("musique préc");
-                break;
-
-            case "ajouter" :
-                System.out.println("ajout son");
-                break;
-
-            case "supprimer" :
-                System.out.println("supr son");
-                break;
-
-            case "modifier":
-                System.out.println("musique modifier");
-                break;
-
-            case "vider" :
-                System.out.println("playlist vide");
-                break;
-
-            case "menu":
-                Main.Menu();
-                break;
-
-            case "quitter" :
-                System.exit(666);
-
-            default :
-                System.out.println("Choisissez une bonne entrée");
-                System.out.println(" ");
-                break;
-
-        }
-    }
-
-    public static void playlist() {
-
-    Scanner scanMusique = new Scanner(System.in);
-
     //Déclaration liste
-    List<String> maPlaylist= new ArrayList<>();
+    public static List<String> maPlaylist = new ArrayList<>();
+
+    public static Scanner scanMusique = new Scanner(System.in);
+
+    public static void ajoutMusique(){
+
+
 
     //ajouter un élément dans la collection
+    System.out.println("Veuillez entrer la musique à ajouter");
+
     String entreeUtilisateur = scanMusique.nextLine();
     maPlaylist.add(entreeUtilisateur);
+
+    System.out.println("le son '" +entreeUtilisateur +"' a bien été ajouté");
 
     imprimerPlaylist(maPlaylist);
 
     }
 
-    public static void imprimerPlaylist(List<String> liste){
+    public static void supprimerMusique(){
+
+        System.out.println("Veuillez entrer une musique à supprimer");
+        String entreeUtilisateur = scanMusique.nextLine();
+        maPlaylist.remove(entreeUtilisateur);
+
+        System.out.println("le son '" +entreeUtilisateur +"' a bien été supprimé");
+        imprimerPlaylist(maPlaylist);
+    }
+
+    public static void viderPlaylist(){
+
+        maPlaylist.clear();
+
+        System.out.println("la playlist est maintenant vide");
+
+        imprimerPlaylist(maPlaylist);
+
+    }
+
+    public static void imprimerPlaylist(List<String> liste) {
+
+        System.out.println("|____Votre playlist____|");
         //parcourir collection
-        for (String musique:liste){
+        for (String musique : liste) {
             System.out.println("musique : " + musique);
         }
     }
