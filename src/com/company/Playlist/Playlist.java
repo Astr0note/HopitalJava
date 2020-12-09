@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Playlist;
 
 import java.util.ArrayList;
 import java.util.List;
