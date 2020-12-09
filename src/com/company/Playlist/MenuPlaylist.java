@@ -1,5 +1,7 @@
 package com.company.Playlist;
 
+import com.company.MenuPrincipal;
+
 import java.util.Scanner;
 
 public class MenuPlaylist {
@@ -11,8 +13,6 @@ public class MenuPlaylist {
             System.out.println();
             System.out.println("-------------------Playlist--------------------");
             System.out.println("Veuillez entrer :");
-            System.out.println("-'suivant' pour passer à la musique suivante");
-            System.out.println("-'précédent' pour passer à la musique précendente");
             System.out.println("-'ajouter' pour ajouter une musique");
             System.out.println("-'supprimer' pour supprimer une musique");
             System.out.println("-'modifier' pour modifier");
@@ -24,13 +24,6 @@ public class MenuPlaylist {
             String entreeUtilisateur = scanChoixPlaylist.nextLine();
 
             switch (entreeUtilisateur) {
-                case "suivant":
-                    System.out.println("passer musique suiv");
-                    break;
-
-                case "précedent":
-                    System.out.println("musique préc");
-                    break;
 
                 case "ajouter":
                     Playlist.ajoutMusique();
@@ -41,7 +34,7 @@ public class MenuPlaylist {
                     break;
 
                 case "modifier":
-                    System.out.println("musique modifier");
+                    Playlist.modifierTitrePlaylist();
                     break;
 
                 case "vider":

@@ -1,4 +1,6 @@
-package com.company.Playlist;
+package com.company;
+
+import com.company.Playlist.MenuPlaylist;
 
 import java.util.Scanner;
 

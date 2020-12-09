@@ -12,33 +12,32 @@ public class Playlist {
 
     public static Scanner scanMusique = new Scanner(System.in);
 
-    public static void ajoutMusique(){
+    public static void ajoutMusique() {
 
 
+        //ajouter un élément dans la collection
+        System.out.println("Veuillez entrer la musique à ajouter");
 
-    //ajouter un élément dans la collection
-    System.out.println("Veuillez entrer la musique à ajouter");
+        String entreeUtilisateur = scanMusique.nextLine();
+        maPlaylist.add(entreeUtilisateur);
 
-    String entreeUtilisateur = scanMusique.nextLine();
-    maPlaylist.add(entreeUtilisateur);
+        System.out.println("le son '" + entreeUtilisateur + "' a bien été ajouté");
 
-    System.out.println("le son '" +entreeUtilisateur +"' a bien été ajouté");
-
-    imprimerPlaylist(maPlaylist);
+        imprimerPlaylist(maPlaylist);
 
     }
 
-    public static void supprimerMusique(){
+    public static void supprimerMusique() {
 
         System.out.println("Veuillez entrer une musique à supprimer");
         String entreeUtilisateur = scanMusique.nextLine();
         maPlaylist.remove(entreeUtilisateur);
 
-        System.out.println("le son '" +entreeUtilisateur +"' a bien été supprimé");
+        System.out.println("le son '" + entreeUtilisateur + "' a bien été supprimé");
         imprimerPlaylist(maPlaylist);
     }
 
-    public static void viderPlaylist(){
+    public static void viderPlaylist() {
 
         maPlaylist.clear();
 
@@ -56,4 +55,22 @@ public class Playlist {
             System.out.println("musique : " + musique);
         }
     }
+
+    public static void modifierTitrePlaylist() {
+        System.out.println("Veuillez entrer la position de la musique à écraser (attention la playlist commence par 0 et commence par le haut)");
+        String entreeUtilisateur = scanMusique.nextLine();
+
+        maPlaylist.remove(entreeUtilisateur);
+
+        System.out.println("entrer la musique de remplacement");
+        Scanner scannerRemplacement = new Scanner(System.in);
+        String remplacement = scannerRemplacement.nextLine();
+
+        maPlaylist.add(Integer.parseInt(entreeUtilisateur), remplacement);
+
+        System.out.println("la musique en position " + entreeUtilisateur + " a été remplacée par '" + remplacement + "'");
+
+        imprimerPlaylist(maPlaylist);
+    }
+
 }
