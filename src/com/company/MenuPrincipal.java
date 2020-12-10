@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.ColossalCave.Lieux.Jeu;
 import com.company.Playlist.MenuPlaylist;
 
 import java.util.Scanner;
@@ -24,7 +25,7 @@ public class MenuPrincipal {
             switch (entreeUtilisateur) {
 
                 case "jeu":
-                    System.out.println("Entree du jeu");
+                    Jeu.Jeux();
 
                     //Jeu();
                     entreeUtilisateur = scanChoix.nextLine();

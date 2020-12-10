@@ -1,4 +1,6 @@
-package Jeu.Lieux;
+package com.company.ColossalCave.Lieux;
+
+import com.company.MenuPrincipal;
 
 import java.util.Scanner;
 
@@ -10,22 +12,31 @@ public class Vallee extends Jeu implements Salle {
         switch (entreeUtilisateur){
             case "nord":
                 Route route = new Route();
-                route.lieux();
                 route.description();
-            case "sud":
-                System.out.println("Vous ne pouvez pas aller par là");
-            case "ouest":
+                route.lieux();
+                break;
 
+            case "ouest":
                 Colline colline = new Colline();
-                colline.lieux();
                 colline.description();
-            case "est":
-                System.out.println("Vous ne pouvez pas aller par là");
+                colline.lieux();
+                break;
+
+            case"quit":
+                MenuPrincipal.Menu();
+                break;
+
+            default:
+                System.out.println("erreur commande");
+                lieux();
+                break;
         }
     }
 
     @Override
     public void description() {
         System.out.println("Vous êtes dans une vallée a coté d’un ruisseau. Un corps flotte là dans l’eau.");
+        System.out.println("vous pouvez allez vers la route au nord ou vers la colline à l'ouest");
+        System.out.println("tapez -nord- ou -ouest-");
     }
 }

@@ -1,8 +1,6 @@
-package Jeu.Lieux;
+package com.company.ColossalCave.Lieux;
 
-import Jeu.Lieux.Foret;
-import Jeu.Lieux.Jeu;
-import Jeu.Lieux.Salle;
+import com.company.MenuPrincipal;
 
 import java.util.Scanner;
 
@@ -15,20 +13,25 @@ public class Colline extends Jeu implements Salle {
             case "nord":
                 System.out.println("Vous aller au nord");
                 Foret foret = new Foret();
-                foret.lieux();
                 foret.description();
-            case "sud":
-                System.out.println("Vous ne pouvez pas aller par là");
-            case "ouest":
-                System.out.println("Vous ne pouvez pas aller par là");
+                foret.lieux();
+                break;
 
-            case "est":
-                System.out.println("Vous ne pouvez pas aller par là");
+            case"quit":
+                MenuPrincipal.Menu();
+                break;
+
+            default:
+                System.out.println("erreur commande");
+                lieux();
+                break;
         }
     }
 
     @Override
     public void description() {
         System.out.println("Vous êtes tout en haut d’une colline qui surplombe la ville, au loin vous voyez une ombre se déplacer a grande vitesse avec un grand couteau." );
+        System.out.println("vous pouvez allez vers la foret au nord");
+        System.out.println("tapez -nord-");
     }
 }

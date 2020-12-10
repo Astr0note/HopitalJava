@@ -1,8 +1,6 @@
-package Jeu.Lieux;
+package com.company.ColossalCave.Lieux;
 
-import Jeu.Lieux.Jeu;
-import Jeu.Lieux.Route;
-import Jeu.Lieux.Salle;
+import com.company.MenuPrincipal;
 
 import java.util.Scanner;
 
@@ -12,24 +10,29 @@ public class Brique extends Jeu implements Salle {
         Scanner scanChoix = new Scanner(System.in);
         String entreeUtilisateur = scanChoix.nextLine();
         switch (entreeUtilisateur){
-            case "nord":
-                System.out.println("Vous ne pouvez pas aller par là");
-
-            case "sud":
-                System.out.println("Vous ne pouvez pas aller par là");
             case "ouest":
 
                 System.out.println("Vous aller à l'ouest");
                 Route route = new Route();
-                route.lieux();
                 route.description();
-            case "est":
-                System.out.println("Vous ne pouvez pas aller par là");
+                route.lieux();
+                break;
+
+            case"quit":
+                MenuPrincipal.Menu();
+                break;
+
+            default:
+                System.out.println("erreur commande");
+                lieux();
+                break;
         }
     }
 
     @Override
     public void description() {
         System.out.println("Vous êtes a l’intérieur d’un building en brique, un petit refuge pour les bêtes. Un homme git là au milieu d’une marre de sang.");
+        System.out.println("vous pouvez allez vers la route a l'ouest");
+        System.out.println("tapez -ouest-");
     }
 }
