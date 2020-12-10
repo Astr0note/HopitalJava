@@ -5,7 +5,9 @@ import com.company.MenuPrincipal;
 import java.util.Scanner;
 
 public class MenuMusique {
-    public static void menuMusique() {
+    public void menuMusique() {
+
+        Playlist playlist = new Playlist();
 
         System.out.println();
         System.out.println("-------------------Musique--------------------");
@@ -22,7 +24,8 @@ public class MenuMusique {
 
         switch (entreeUtilisateur) {
             case "afficher":
-
+                playlist.imprimerPlaylist(playlist.maPlaylist);
+                break;
 
             case "suivant":
                 System.out.println("passer musique suiv");

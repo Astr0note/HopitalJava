@@ -3,23 +3,21 @@ package com.company.Playlist;
 public class Musique {
     private String nom;
     private String auteur;
-    private float durée;
 
-    public Musique(String nom, String auteur, float durée){
-        this.nom = nom;
-        this.auteur = auteur;
-        this.durée = durée;
-    }
 
-    public String getNom() {
+    public String getNom(String nom) {
         return nom;
     }
 
-    public String getAuteur() {
+    public String getAuteur(String auteur) {
         return auteur;
     }
 
-    public float getDurée() {
-        return durée;
+
+    public Musique(String nom, String auteur){
+        this.nom = nom;
+        this.auteur = auteur;
     }
+
+
 }

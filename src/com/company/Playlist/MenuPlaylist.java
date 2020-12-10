@@ -1,14 +1,13 @@
 package com.company.Playlist;
 
 import com.company.MenuPrincipal;
-import com.company.Playlist.Playlist;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class MenuPlaylist {
 
     public static void menuPlaylist(){
+        Playlist playlist = new Playlist();
 
         boolean menu = false;
         while (menu ==false) {
@@ -16,7 +15,7 @@ public class MenuPlaylist {
             System.out.println();
             System.out.println("-------------------Playlist--------------------");
 
-            Playlist.imprimerPlaylist(Playlist.maPlaylist);
+            playlist.imprimerPlaylist(playlist.maPlaylist);
 
             System.out.println("Veuillez entrer :");
             System.out.println("-'ajouter' pour ajouter une musique");
@@ -32,19 +31,19 @@ public class MenuPlaylist {
             switch (entreeUtilisateur) {
 
                 case "ajouter":
-                    Playlist.ajoutMusique();
+                    playlist.ajoutMusique();
                     break;
 
                 case "supprimer":
-                    Playlist.supprimerMusique();
+                    playlist.supprimerMusique();
                     break;
 
                 case "modifier":
-                    Playlist.modifierTitrePlaylist();
+                    playlist.modifierTitrePlaylist();
                     break;
 
                 case "vider":
-                    Playlist.viderPlaylist();
+                    playlist.viderPlaylist();
                     break;
 
                 case "menu":
