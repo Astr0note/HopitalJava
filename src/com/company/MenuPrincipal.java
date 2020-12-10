@@ -22,8 +22,9 @@ public class MenuPrincipal {
             switch (entreeUtilisateur) {
 
                 case "jeu":
-                    //Jeu();
                     System.out.println("Entree du jeu");
+
+                    //Jeu();
                     entreeUtilisateur = scanChoix.nextLine();
                     break;
 
