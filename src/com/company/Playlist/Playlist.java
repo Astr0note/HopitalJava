@@ -19,11 +19,12 @@ public class Playlist {
         System.out.println("Entrer le titre de la musique"+entreeNom);
         entreeNom = scanMusique.nextLine();
 
-        System.out.println("Entrer le titre de la musique"+entreeAuteur);
+        System.out.println("Entrer l'auteur de la musique"+entreeAuteur);
         entreeAuteur = scanMusique.nextLine();
 
         Musique musique = new Musique(entreeNom, entreeAuteur);
         maPlaylist.add(musique);
+        System.out.println(maPlaylist);
     }
 
 
@@ -50,8 +51,10 @@ public class Playlist {
 
         System.out.println("|________________Votre playlist________________|");
         //parcourir collection
+        int i = 0;
         for (Musique musique:liste) {
-            System.out.println("titre: " + musique.getNom(entreeNom) +" auteur: "+ musique.getAuteur(entreeAuteur));
+            System.out.println("titre: " + maPlaylist.get(i).getNom() +" auteur: "+ maPlaylist.get(i).getAuteur());
+            i++;
         }
         System.out.println("|______________________________________________|");
     }
@@ -71,11 +74,19 @@ public class Playlist {
         Scanner scannerRemplacement = new Scanner(System.in);
         String Musique = scannerRemplacement.nextLine();
 
-      //  maPlaylist.add(Integer.parseInt(entreeUtilisateur), Musique);
+        //maPlaylist.add(Integer.parseInt(entreeUtilisateur), Musique);
 
         System.out.println("la musique en position " + entreeUtilisateur + " a été remplacée par '" +  scannerRemplacement.nextLine() + "'");
 
         imprimerPlaylist(maPlaylist);
     }
+    public String getArtiste(int index)
+    {
+        return maPlaylist.get(index).getAuteur();
+    }
 
+    public String getTitre(int index)
+    {
+        return maPlaylist.get(index).getNom();
+    }
 }

@@ -13,6 +13,13 @@ public class Musique {
         return auteur;
     }
 
+    public String getAuteur() {
+        return auteur;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 
     public Musique(String nom, String auteur){
         this.nom = nom;
