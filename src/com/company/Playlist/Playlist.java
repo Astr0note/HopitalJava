@@ -5,16 +5,14 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
+
 public class Playlist {
 
     //Déclaration liste
-    public static List<String> maPlaylist = new ArrayList<>();
-
+    public static List<String>  maPlaylist= new ArrayList<>();
     public static Scanner scanMusique = new Scanner(System.in);
 
     public static void ajoutMusique() {
-
-
         //ajouter un élément dans la collection
         System.out.println("Veuillez entrer la musique à ajouter");
 
@@ -44,23 +42,28 @@ public class Playlist {
         System.out.println("la playlist est maintenant vide");
 
         imprimerPlaylist(maPlaylist);
-
     }
 
-    public static void imprimerPlaylist(List<String> liste) {
+    public static void imprimerPlaylist(List<String>liste) {
 
         System.out.println("|____Votre playlist____|");
         //parcourir collection
         for (String musique : liste) {
-            System.out.println("musique : " + musique);
+            System.out.println("musique : " + musique );
         }
+        System.out.println("|______________________|");
     }
 
     public static void modifierTitrePlaylist() {
         System.out.println("Veuillez entrer la position de la musique à écraser (attention la playlist commence par 0 et commence par le haut)");
         String entreeUtilisateur = scanMusique.nextLine();
 
-        maPlaylist.remove(entreeUtilisateur);
+        System.out.println("Veuillez entrer le nomde la musique à écraser");
+
+        Scanner scannerSuppression = new Scanner(System.in);
+        String suppression = scannerSuppression.nextLine();
+
+        maPlaylist.remove(suppression);
 
         System.out.println("entrer la musique de remplacement");
         Scanner scannerRemplacement = new Scanner(System.in);

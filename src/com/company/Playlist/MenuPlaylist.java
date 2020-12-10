@@ -1,10 +1,13 @@
 package com.company.Playlist;
 
 import com.company.MenuPrincipal;
+import com.company.Playlist.Playlist;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuPlaylist {
+
     public static void menuPlaylist(){
 
         boolean menu = false;
@@ -12,6 +15,9 @@ public class MenuPlaylist {
 
             System.out.println();
             System.out.println("-------------------Playlist--------------------");
+
+            Playlist.imprimerPlaylist(Playlist.maPlaylist);
+
             System.out.println("Veuillez entrer :");
             System.out.println("-'ajouter' pour ajouter une musique");
             System.out.println("-'supprimer' pour supprimer une musique");

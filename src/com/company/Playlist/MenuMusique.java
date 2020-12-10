@@ -10,6 +10,7 @@ public class MenuMusique {
         System.out.println();
         System.out.println("-------------------Musique--------------------");
         System.out.println("Veuillez entrer :");
+        System.out.println("-'afficher' pour éa la premiere musique de la playlist");
         System.out.println("-'suivant' pour passer à la musique suivante");
         System.out.println("-'précédent' pour passer à la musique précendente");
         System.out.println("-'ajouter' pour ajouter une musique");
@@ -20,6 +21,9 @@ public class MenuMusique {
         String entreeUtilisateur = scanChoix.nextLine();
 
         switch (entreeUtilisateur) {
+            case "afficher":
+
+
             case "suivant":
                 System.out.println("passer musique suiv");
                 break;
