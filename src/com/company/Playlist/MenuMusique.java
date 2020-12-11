@@ -50,6 +50,13 @@ public class MenuMusique {
             //si le patient tape "quitter" il ferme l'application
             case "quitter":
                 System.exit(666);
+
+                //si le patient tape autre chose message d'erreur
+            default:
+                System.out.println("Choisissez une bonne entrée");
+                System.out.println(" ");
+                menuMusique();
+                break;
         }
 
     }
