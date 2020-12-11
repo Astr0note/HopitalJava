@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
-
 public class Playlist {
 
     //Déclaration liste
@@ -15,8 +13,9 @@ public class Playlist {
     public String entreeAuteur;
     public String entreeDuree;
 
+    //fonction permettant l'ajout de musique à la playlist
     public void ajoutMusique() {
-        //ajouter un élément dans la collection
+        //ajouter des éléments dans la collection
         System.out.println("Entrer le titre de la musique");
         entreeNom = scanMusique.nextLine();
 
@@ -26,12 +25,14 @@ public class Playlist {
         /*System.out.println("Entrer la duree de la musique"+entreeDuree);
         entreeDuree = scanMusique.nextLine();*/
 
+        //création de l'objet musique
         Musique musique = new Musique(entreeNom, entreeAuteur);
         maPlaylist.add(musique);
         System.out.println(maPlaylist);
     }
 
 
+    //fonction permettant de supprimer une musique de la playlist
     public void supprimerMusique() {
 
         System.out.println("Entrer le titre de la musique");
@@ -45,6 +46,7 @@ public class Playlist {
         imprimerPlaylist(maPlaylist);
     }
 
+    //fonction permettant de vider la playlist
     public void viderPlaylist() {
 
         maPlaylist.clear();
@@ -54,6 +56,7 @@ public class Playlist {
         imprimerPlaylist(maPlaylist);
     }
 
+    //foncton permettant d'afficher la playlist
     public void imprimerPlaylist(List<Musique> liste) {
 
         System.out.println("|________________Votre playlist________________|");
@@ -67,6 +70,7 @@ public class Playlist {
         System.out.println("|______________________________________________|");
     }
 
+    //fonction permettant de modifier un titre de la playlist
     public void modifierTitrePlaylist() {
 
         supprimerMusique();
@@ -78,17 +82,7 @@ public class Playlist {
         imprimerPlaylist(maPlaylist);
     }
 
-
-    public String getArtiste(int index)
-    {
-        return maPlaylist.get(index).getAuteur();
-    }
-
-    public String getTitre(int index)
-    {
-        return maPlaylist.get(index).getNom();
-    }
-
+    //fonction permettant de rechercher une musique
     public Musique rechecherMusique(List<Musique> liste, String nom){
         for (Musique musique:liste) {
             if (musique.getNom().equals(nom)){

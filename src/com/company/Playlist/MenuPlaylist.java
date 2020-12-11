@@ -12,6 +12,7 @@ public class MenuPlaylist {
         boolean menu = false;
         while (menu ==false) {
 
+            //affichage des indications de la playlist
             System.out.println();
             System.out.println("-------------------Playlist--------------------");
 
