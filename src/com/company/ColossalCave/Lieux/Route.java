@@ -8,14 +8,15 @@ public class Route extends Jeu implements Salle {
 
     @Override
     public void lieux() {
+        //on récupère ce que tape l'utilisateur
 
         Scanner scanChoix = new Scanner(System.in);
         String entreeUtilisateur = scanChoix.nextLine();
         switch (entreeUtilisateur) {
             case "nord":
-                Foret foret = new Foret();
-                foret.description();
-                foret.lieux();
+                Foret foret = new Foret(); //On crée un objet foret pour le connecté à la classe Foret
+                foret.description(); //on récupère la description de la classe Foret
+                foret.lieux(); //on fait envoi l'utilisateur vers le switch case de la classe Foret
                 break;
 
             case "sud":
@@ -38,6 +39,7 @@ public class Route extends Jeu implements Salle {
                 brique.description();
                 brique.lieux();
                 break;
+                //Dans le cas de la route, on peut aller dans les 4 direction, on a donc 4 case différentes
             case "quit":
                 MenuPrincipal.Menu();
                 break;
@@ -45,7 +47,8 @@ public class Route extends Jeu implements Salle {
             default:
                 System.out.println("erreur commande");
                 lieux();
-                break;
+                //On va mettre ses deux case dans tout les cas pour laisser le joueur quitter et laisser le jeu afficher une erreur si ou autre chose que les case sont taper
+
         }
     }
 

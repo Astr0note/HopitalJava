@@ -16,7 +16,7 @@ public class Colline extends Jeu implements Salle {
                 foret.description();
                 foret.lieux();
                 break;
-
+            //On ne peut que se diriger que au nord, on a donc un seul case
             case"quit":
                 MenuPrincipal.Menu();
                 break;
@@ -25,6 +25,7 @@ public class Colline extends Jeu implements Salle {
                 System.out.println("erreur commande");
                 lieux();
                 break;
+            //On va mettre ses deux case dans tout les cas pour laisser le joueur quitter et laisser le jeu afficher une erreur si ou autre chose que les case sont taper
         }
     }
 
