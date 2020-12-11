@@ -3,15 +3,9 @@ package com.company.Playlist;
 public class Musique {
     private String nom;
     private String auteur;
+    private String duree;
 
 
-    public String getNom(String nom) {
-        return nom;
-    }
-
-    public String getAuteur(String auteur) {
-        return auteur;
-    }
 
     public String getAuteur() {
         return auteur;
@@ -19,6 +13,10 @@ public class Musique {
 
     public String getNom() {
         return nom;
+    }
+
+    public String getDuree() {
+        return duree;
     }
 
     public Musique(String nom, String auteur){

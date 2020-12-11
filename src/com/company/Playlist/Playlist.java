@@ -13,14 +13,18 @@ public class Playlist {
     public Scanner scanMusique = new Scanner(System.in);
     public String entreeNom;
     public String entreeAuteur;
+    public String entreeDuree;
 
     public void ajoutMusique() {
         //ajouter un élément dans la collection
-        System.out.println("Entrer le titre de la musique"+entreeNom);
+        System.out.println("Entrer le titre de la musique");
         entreeNom = scanMusique.nextLine();
 
-        System.out.println("Entrer l'auteur de la musique"+entreeAuteur);
+        System.out.println("Entrer l'auteur de la musique");
         entreeAuteur = scanMusique.nextLine();
+
+        /*System.out.println("Entrer la duree de la musique"+entreeDuree);
+        entreeDuree = scanMusique.nextLine();*/
 
         Musique musique = new Musique(entreeNom, entreeAuteur);
         maPlaylist.add(musique);
@@ -30,11 +34,14 @@ public class Playlist {
 
     public void supprimerMusique() {
 
-        System.out.println("Veuillez entrer une musique à supprimer");
-        String entreeNom = scanMusique.nextLine();
-        maPlaylist.remove(entreeNom);
+        System.out.println("Entrer le titre de la musique");
+        entreeNom = scanMusique.nextLine();
 
-        System.out.println("le son '" + entreeNom + "' a bien été supprimé");
+        Musique musique = rechecherMusique(maPlaylist, entreeNom);
+
+        if (musique != null){
+            maPlaylist.remove(musique);
+        }
         imprimerPlaylist(maPlaylist);
     }
 
@@ -53,33 +60,25 @@ public class Playlist {
         //parcourir collection
         int i = 0;
         for (Musique musique:liste) {
-            System.out.println("titre: " + maPlaylist.get(i).getNom() +" auteur: "+ maPlaylist.get(i).getAuteur());
+          //  System.out.println("Titre: " + maPlaylist.get(i).getNom() +"| Auteur: "+ maPlaylist.get(i).getAuteur()/*" durée: " + maPlaylist.get(i).getDuree()*/);
+            System.out.println("Titre: " + musique.getNom() +"| Auteur: "+ musique.getAuteur());
             i++;
         }
         System.out.println("|______________________________________________|");
     }
 
     public void modifierTitrePlaylist() {
-        System.out.println("Veuillez entrer la position de la musique à écraser (attention la playlist commence par 0 et commence par le haut)");
-        String entreeUtilisateur = scanMusique.nextLine();
 
-        System.out.println("Veuillez entrer le nomde la musique à écraser");
+        supprimerMusique();
 
-        Scanner scannerSuppression = new Scanner(System.in);
-        String suppression = scannerSuppression.nextLine();
+        ajoutMusique();
 
-        maPlaylist.remove(suppression);
-
-        System.out.println("entrer la musique de remplacement");
-        Scanner scannerRemplacement = new Scanner(System.in);
-        String Musique = scannerRemplacement.nextLine();
-
-        //maPlaylist.add(Integer.parseInt(entreeUtilisateur), Musique);
-
-        System.out.println("la musique en position " + entreeUtilisateur + " a été remplacée par '" +  scannerRemplacement.nextLine() + "'");
+        System.out.println("la musique "+entreeNom + entreeAuteur +" a bien été changer par "+ entreeNom + entreeAuteur);
 
         imprimerPlaylist(maPlaylist);
     }
+
+
     public String getArtiste(int index)
     {
         return maPlaylist.get(index).getAuteur();
@@ -88,5 +87,14 @@ public class Playlist {
     public String getTitre(int index)
     {
         return maPlaylist.get(index).getNom();
+    }
+
+    public Musique rechecherMusique(List<Musique> liste, String nom){
+        for (Musique musique:liste) {
+            if (musique.getNom().equals(nom)){
+                return musique;
+            }
+        }
+        return null;
     }
 }

@@ -11,7 +11,7 @@ public class Route extends Jeu implements Salle {
 
         Scanner scanChoix = new Scanner(System.in);
         String entreeUtilisateur = scanChoix.nextLine();
-        switch (entreeUtilisateur){
+        switch (entreeUtilisateur) {
             case "nord":
                 Foret foret = new Foret();
                 foret.description();
@@ -38,7 +38,7 @@ public class Route extends Jeu implements Salle {
                 brique.description();
                 brique.lieux();
                 break;
-            case"quit":
+            case "quit":
                 MenuPrincipal.Menu();
                 break;
 
@@ -53,6 +53,7 @@ public class Route extends Jeu implements Salle {
     public void description() {
         System.out.println(" Vous êtes au bout de la route devant un petit immeuble en brique. Un petit ruisseau coule a côté du building en bas d’une rigole.");
         System.out.println("vous pouvez allez vers la vallée au sud , la colline à l'ouest , la foret au nord , building en brique à l'est");
-        System.out.println("tapez -sud- , -ouest- , -nord- , ou -est-");;
+        System.out.println("tapez -sud- , -ouest- , -nord- , ou -est-");
+        ;
     }
 }
