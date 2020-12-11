@@ -21,7 +21,7 @@ public class Vallee extends Jeu implements Salle {
                 colline.description();
                 colline.lieux();
                 break;
-
+            //On ne peut que se diriger que au nord et à l'ouest, on a donc deux case
             case"quit":
                 MenuPrincipal.Menu();
                 break;
@@ -30,6 +30,7 @@ public class Vallee extends Jeu implements Salle {
                 System.out.println("erreur commande");
                 lieux();
                 break;
+            //On va mettre ses deux case dans tout les cas pour laisser le joueur quitter et laisser le jeu afficher une erreur si ou autre chose que les case sont taper
         }
     }
 
