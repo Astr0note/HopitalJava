@@ -12,7 +12,7 @@ public class Brique extends Jeu implements Salle {
         switch (entreeUtilisateur){
             case "ouest":
 
-                System.out.println("Vous aller à l'ouest");
+                System.out.println("Vous allez à l'ouest");
                 Route route = new Route();
                 route.description();
                 route.lieux();

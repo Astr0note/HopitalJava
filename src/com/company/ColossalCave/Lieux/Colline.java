@@ -11,7 +11,7 @@ public class Colline extends Jeu implements Salle {
         String entreeUtilisateur = scanChoix.nextLine();
         switch (entreeUtilisateur){
             case "nord":
-                System.out.println("Vous aller au nord");
+                System.out.println("Vous allez au nord");
                 Foret foret = new Foret();
                 foret.description();
                 foret.lieux();

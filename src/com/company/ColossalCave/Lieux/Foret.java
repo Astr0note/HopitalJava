@@ -12,7 +12,7 @@ public class Foret extends Jeu implements Salle {
         switch (entreeUtilisateur){
             case "sud":
 
-                System.out.println("Vous aller au sud");
+                System.out.println("Vous allez au sud");
                 Route route = new Route();
                 route.description();
                 route.lieux();
